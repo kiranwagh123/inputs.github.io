@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new design for inputs</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins",sans-serif;
+    }
+    
+    .outer-div{
+        background-image:linear-gradient(rgb(0,0,0,0.1),rgb(38, 39, 35)), url(https://t3.ftcdn.net/jpg/03/76/48/32/360_F_376483281_A9CVLvORblntUsyam10IcWBUgyNLBkNC.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    form{
+
+        width: 90%;
+        max-width: 600px;
+    }
+    .inner-div{
+
+        margin-bottom: 30px;
+        position: relative;
+    }
+    input{
+        width: 80%;
+        padding: 10px;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 15px;
+        outline: 0;
+        font-size: 15px;
+        border: 3px solid #fff;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 25px rgb(14, 14, 14);
+    }
+    .in-put{
+
+        border: 3px solid red;
+    }
+
+    .in-put2{
+        border: 3px solid green;
+    }
+    label{
+
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: -35px;
+        padding: 10px;
+        color: #fff;
+        cursor: text;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+
+    }
+    button{
+        padding: 10px 0;
+        width: 80%;
+        color: #fff;
+        outline: 0;
+        background: transparent;
+        border: 1px solid #fff;
+        cursor: pointer;
+        border-radius: 15px;
+        box-shadow: 1px 1px 25px rgb(253, 249, 248);
+        transition: 0.9s;
+    }
+    button:hover{
+       
+        color: black;
+        font-weight: bolder;
+        background-color: #9e9393;
+        box-shadow: 1px 1px 25px rgb(246, 51, 2);
+    }
+    /* input:focus~label,
+    input:valid~label{
+        font-size: 11px;
+        top: -35px;
+    } */
+    .div1{
+        display: flex;
+        justify-content: flex-end;
+    }
+   
+    
+</style>
+<body onkeypress="validation()">
+    
+
+    <!-- ---------------------------------html starts  ----------------------------->
+    
+    <div class="outer-div">
+   
+        
+        <form>
+     
+    <div class="inner-div">
+            
+        <input type="text" id="input1"  autocomplete="off" required >
+        <label for="name"><i class="fa-solid fa-user"></i> Your Name</label>
+         <!-- <i class="fa-regular fa-circle-xmark"></i> -->
+    </div>
+    
+    
+    
+    <div class="inner-div">
+        <!-- <input type="email" id="input1"  required > -->
+        <input type="email" id="input1" autocomplete="off" required >
+        <label><i class="fa-solid fa-envelope"></i> Your Email</label>
+    </div>
+    
+    <div class="inner-div">
+        <input type="text" id="input1"  autocomplete="off" required>
+        <label>Your Password</label>
+    </div>
+    
+    <div class="inner-div">
+        <input type="text" id="input1"  required autocomplete="off">
+       <label>Comform Password</label>
+    </div>
+
+    <div class="inner-div">
+        <input type="text" id="input1"  required autocomplete="off">
+        <label><i class="fas fa-phone-square-alt"></i>Contact No</label>
+    </div>
+    
+    <button onkeypress="validation()" type="submit">SUBMIT<i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+    
+</form>
+
+</div>
+
+<!-------------------------------------- html end --------------------------- -->
+
+
+
+
+<script>
+
+    popup1 = document.getElementById("input1");
+    popup2 = document.getElementById("input1")
+
+function validation(){
+
+    var inputvalue = document.getElementById("input1").value;
+
+    if(inputvalue == ""){
+
+        popup1.classList.add("in-put")
+    }
+    
+    else if(inputvalue <= 3 ){
+        
+        // popup1.classList.add("in-put");
+        popup2.classList.add("in-put2");
+    }
+
+    else if(isNaN(inputvalue)){
+        
+        popup1.classList.add("in-put")
+    }
+  
+        
+}
+
+</script>
+
+
+    
+</body>
+</html>
